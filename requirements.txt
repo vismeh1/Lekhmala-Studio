@@ -1,0 +1,10 @@
+streamlit
+rembg
+Pillow
+opencv-python-headless
+gfpgan
+basicsr
+facexlib
+torch
+torchvision
+numpy
