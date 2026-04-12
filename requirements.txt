@@ -1,10 +1,10 @@
 streamlit
-rembg
-Pillow
 opencv-python-headless
+numpy<2.0.0
+torch --index-url https://download.pytorch.org/whl/cpu
+torchvision --index-url https://download.pytorch.org/whl/cpu
+rembg
 gfpgan
 basicsr
 facexlib
-torch
-torchvision
-numpy
+setuptools<70
