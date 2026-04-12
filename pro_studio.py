@@ -50,14 +50,11 @@ def load_models():
     import os
     import urllib.request
     model_path = 'GFPGANv1.4.pth'
-    # Auto-download the model if it's missing (needed for Cloud)
     if not os.path.exists(model_path):
-        with st.spinner("Downloading AI Model for the first time... please wait."):
-            url = "https://github.com/TencentARC/GFPGAN/releases/download/v1.3.0/GFPGANv1.4.pth"
-            urllib.request.urlretrieve(url, model_path)
-    
+        # This downloads the "brain" to the cloud server automatically
+        url = "https://github.com/TencentARC/GFPGAN/releases/download/v1.3.0/GFPGANv1.4.pth"
+        urllib.request.urlretrieve(url, model_path)
     return GFPGANer(model_path=model_path, upscale=2, arch='clean', channel_multiplier=2)
-
 # --- HEADER ---
 st.markdown("<h1>📸 Lekhmala Photo Studio</h1>", unsafe_allow_html=True)
 st.markdown("<p class='subtitle'><b> by <b>Bishal Mehta</b></p>", unsafe_allow_html=True)
