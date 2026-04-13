@@ -88,7 +88,7 @@ with tab1:
 if uploaded_file:
     # Use session state to prevent AI from re-running on every slider change
     if 'processed_img' not in st.session_state or st.session_state.get('last_uploaded') != uploaded_file.name:
-        with st.status("Lekhmala AI is working...", expanded=True) as status:
+       with st.status("Lekhmala AI is working...", expanded=True) as status:
             st.write("Initializing Face Restoration...")
             enhancer = load_models()
             
@@ -97,8 +97,16 @@ if uploaded_file:
             img = cv2.imdecode(file_bytes, cv2.IMREAD_COLOR)
             
             st.write("Enhancing Biometric Quality...")
-            _, _, enhanced = enhancer.enhance(img, has_aligned=False, only_center_face=False, paste_back=True)
-            pil_img = Image.fromarray(cv2.cvtColor(enhanced, cv2.COLOR_BGR2RGB))
+            try:
+                # Try Professional Enhancement
+                _, _, enhanced = enhancer.enhance(img, has_aligned=False, only_center_face=True, paste_back=True)
+                enhanced_rgb = cv2.cvtColor(enhanced, cv2.COLOR_BGR2RGB)
+                pil_img = Image.fromarray(enhanced_rgb)
+            except Exception as e:
+                # Fallback to Standard Quality if AI fails
+                st.warning("⚠️ Professional Enhancement skipped for this photo (AI Logic Error). Using Standard Quality.")
+                img_rgb = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+                pil_img = Image.fromarray(img_rgb)
             
             st.write("Generating Studio White Background...")
             no_bg = remove(pil_img)
