@@ -1,5 +1,6 @@
 streamlit
-opencv-contrib-python-headless
+onnxruntime
+opencv-python-headless
 rembg
 gfpgan
 basicsr
