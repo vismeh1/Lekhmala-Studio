@@ -199,4 +199,4 @@ else:
     st.warning("👋 Namaste! Please upload a photo in **Tab 1** to start your professional studio session.")
 
 # --- FOOTER ---
-st.markdown("<div class='footer'>Lekhmala Photo Studio v2.5 | Professional PP Photo Solution| Optimized for Nepal Gov Standards | Developed by Bishal Mehta </div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Lekhmala Photo Studio v2.5 | Professional PP Photo Solution Optimized for Nepal Gov Standards | Developed by Bishal Mehta </div>", unsafe_allow_html=True)
