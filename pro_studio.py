@@ -204,7 +204,7 @@ if uploaded_file:
         d3.download_button(f"📥 Save as {pdf_mode} PDF", buf_pdf.getvalue(), "Lekhmala_Studio.pdf")
 
 else:
-    st.warning("👋 Namaste! Please upload a photo in **Tab 1** to start your professional studio session.")
+    st.warning("👋 Namaste! Please upload cropped photo/Close-up head shot in **Tab 1** to start your professional studio session.")
 
 # --- FOOTER ---
 st.markdown("<div class='footer'>Lekhmala Photo Studio v2.5 | Professional PP Photo Solution Optimized for Nepal Gov Standards | Developed by Bishal Mehta </div>", unsafe_allow_html=True)
