@@ -62,8 +62,8 @@ def load_models():
     return GFPGANer(model_path=model_path, upscale=2, arch='clean', channel_multiplier=2)
 
 # --- 5. HEADER ---
-st.markdown("<h1>📸 Lekhmala Photo Studio</h1>", unsafe_allow_html=True)
-st.markdown("<p class='subtitle'>Professional Biometric Photo Solution | Developed by <b>Bishal Mehta</b></p>", unsafe_allow_html=True)
+st.markdown("<h1>Lekhmala Photo Studio</h1>", unsafe_allow_html=True)
+st.markdown("<p class='subtitle'>Professional PP Photo Solution | Developed by <b>Bishal Mehta</b></p>", unsafe_allow_html=True)
 
 # --- 6. WORKFLOW TABS ---
 tab1, tab2, tab3 = st.tabs(["🚀 Step 1: Upload", "🎨 Step 2: Adjust", "📥 Step 3: Export"])
@@ -199,4 +199,4 @@ else:
     st.warning("👋 Namaste! Please upload a photo in **Tab 1** to start your professional studio session.")
 
 # --- FOOTER ---
-st.markdown("<div class='footer'>Lekhmala Photo Studio v2.5 | Optimized for Nepal Gov Standards | Developed by Bishal Mehta</div>", unsafe_allow_html=True)
+st.markdown("<div class='footer'>Lekhmala Photo Studio v2.5 | Professional PP Photo Solution| Optimized for Nepal Gov Standards | Developed by Bishal Mehta </div>", unsafe_allow_html=True)
